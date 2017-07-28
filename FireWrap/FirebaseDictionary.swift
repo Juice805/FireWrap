@@ -9,7 +9,7 @@
 import Foundation
 
 public struct FireDictionary: Collection, ExpressibleByDictionaryLiteral, FireValue {
-	private var raw = [Key: Value]()
+	fileprivate var raw = [Key: Value]()
 
 	public typealias Key = String
 	public typealias Value = FireValue
@@ -88,10 +88,13 @@ public struct FireDictionary: Collection, ExpressibleByDictionaryLiteral, FireVa
 
 	public var debugDescription: String {
 		return raw.debugDescription
+        
 	}
 
-	// MARK: Dictionary Methods
-	public var keys: Dictionary<Key, Value>.Keys {
+	// MARK: Dictionary Methods 
+
+	public var keys: LazyMapCollection<Dictionary<String, FireValue>, String> {
+        
 		return raw.keys
 	}
 

@@ -9,7 +9,7 @@
 import Foundation
 
 public struct FireArray: RandomAccessCollection, MutableCollection, _DestructorSafeContainer, FireValue {
-	private var raw = [FireValue]()
+	fileprivate var raw = [FireValue]()
 
 	public typealias Element =  Array<FireValue>.Element
 	public typealias Index = Array<FireValue>.Index
@@ -87,7 +87,7 @@ public struct FireArray: RandomAccessCollection, MutableCollection, _DestructorS
 	}
 
 	// MARK: Array Methods
-	public mutating func append(new: FireValue) {
+	public mutating func append(_ new: FireValue) {
 		self.raw.append(new)
 	}
 }

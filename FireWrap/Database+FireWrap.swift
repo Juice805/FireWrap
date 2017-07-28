@@ -12,11 +12,11 @@ import FirebaseDatabase
 
 extension DatabaseQuery {
 
-	func queryEqual(toValue: FireValue?) {
+	func queryEqual(_ toValue: FireValue?) {
 		self.queryEqual(toValue: toValue?.uploadable)
 	}
 
-	func queryEqual(toValue: FireValue, childKey: String?) {
+	func queryEqual(_ toValue: FireValue, childKey: String?) {
 		self.queryEqual(toValue: toValue.uploadable, childKey: childKey)
 	}
 
